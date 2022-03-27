@@ -1,8 +1,8 @@
-package com.github.klefstad_teaching.cs122b.activity.three.rest;
+package com.github.klefstad_teaching.cs122b.database.rest;
 
-import com.github.klefstad_teaching.cs122b.activity.three.model.data.Student;
-import com.github.klefstad_teaching.cs122b.activity.three.model.response.StudentRequest;
-import com.github.klefstad_teaching.cs122b.activity.three.model.response.StudentResponse;
+import com.github.klefstad_teaching.cs122b.database.model.data.Student;
+import com.github.klefstad_teaching.cs122b.database.model.response.StudentRequest;
+import com.github.klefstad_teaching.cs122b.database.model.response.StudentResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,6 @@
-package com.github.klefstad_teaching.cs122b.activity.three.model.response;
+package com.github.klefstad_teaching.cs122b.database.model.response;
 
-import com.github.klefstad_teaching.cs122b.activity.three.model.data.Student;
+import com.github.klefstad_teaching.cs122b.database.model.data.Student;
 
 public class StudentRequest
 {

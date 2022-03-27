@@ -1,4 +1,4 @@
-package com.github.klefstad_teaching.cs122b.activity.three.model.data;
+package com.github.klefstad_teaching.cs122b.database.model.data;
 
 public class Student
 {
