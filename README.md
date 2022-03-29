@@ -7,9 +7,9 @@
 
 ## NamedParameterJDBCTemplate
 
-Spring has a very convenient class `NamedParameterJDBCTemplate` that does alot of work with JDBC to allow for Database queries without alot of boilerplate. Ussaly to deal with database quries in Java we would use `Connection` directly. But this comes with alot of additional steps, works, and clean up that we would rather avoid. 
+Spring has a very convenient class `NamedParameterJDBCTemplate` that does a lot of work with JDBC to allow for Database queries without a lot of boilerplate. Usually to deal with database quries in Java we would use `Connection` directly. But this comes with a lot of additional steps, works, and clean up that we would rather avoid. 
 
-**Note** `Connection` is only here for **demostration purposes only**. Please only use `NamedParameterJDBCTemplate` as this will save you alot of time in these projects
+**Note** `Connection` is only here for **demonstration purposes only**. Please only use `NamedParameterJDBCTemplate` as this will save you a lot of time in these projects
 
 
 ## Update Queries
@@ -32,7 +32,7 @@ MapSqlParameterSource source =
         .addValue("gpa", student.getGpa(), Types.DECIMAL);
         
 int rowsUpdated = this.template.update(sql, source);  
-// If no error is thrown then the query has been executed and we can check how many rows were updated with the returned int
+// If no error is thrown then the query has been executed, and we can check how many rows were updated with the returned int
 ```
 
 ## Select Queries
@@ -41,7 +41,7 @@ To get values from the database (`SELECT`) we use `NamedParameterJDBCTemplate::q
 
  - `String` - The Sql string to execute
  - `MapSqlParameterSource` - a 'map' of values to replace in the sql string (we **never** place values directly in the sql string as this leaves us open for sql injection, therefore we use this to keep a record of all the values to replace)
- - `lambda` - a Java Lambda (or a refrence to a method) that takes two values (`ResultSet` rs, `int` rowNum) and returns any object.
+ - `lambda` - a Java Lambda (or a reference to a method) that takes two values (`ResultSet` rs, `int` rowNum) and returns any object.
 
 ```java
 String sql = 
@@ -71,7 +71,7 @@ List<Student> students =
 
 ### Lambda
 
-For the select queries we use a lambda to map the row into a object. If you want you can use a method instead if the lambda has too much work or if you just perfer to use methods:
+For the select queries we use a lambda to map the row into an object. If you want you can use a method instead if the lambda has too much work or if you just prefer to use methods:
 
 ```java
 public List<Student> getStudents(String firstName)
