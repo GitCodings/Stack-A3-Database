@@ -67,3 +67,40 @@ List<Student> students =
                 .setGpa(rs.getDouble("gpa"))
     );
 ```
+
+or 
+
+```java
+public List<Student> getStudents(String firstName)
+{
+    String sql = 
+        "SELECT id, first_name, last_name, year, gpa " +
+        "FROM activity.student " +
+        "WHERE first_name = :firstName;"; //notice we mark varaibles with the ':var' format
+
+    MapSqlParameterSource source = 
+        new MapSqlParameterSource() //For ever ':var' we list a value and `Type` for value
+            .addValue("firstName", firstName, Types.VARCHAR); // Notice the lack of ':'  in the string here
+
+
+    List<Student> students =
+        this.template.query(
+            sql, 
+            source,
+            this::mapStudentRows
+        );
+    
+    return students;
+}
+    
+    
+public Studen mapStudenRows(ResultSet rs, int rowNum)
+{
+    return new Student()
+        .setId(rs.getLong("id"))
+        .setFirstName(rs.getString("first_name"))
+        .setLastName(rs.getString("last_name"))
+        .setYear(rs.getInt("year"))
+        .setGpa(rs.getDouble("gpa"));
+}
+```
