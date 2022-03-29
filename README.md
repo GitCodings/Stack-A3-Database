@@ -3,6 +3,7 @@
 - [NamedParameterJDBCTemplate](#namedparameterjdbctemplate)
 - [Update Queries](#update-queries)
 - [Select Queries](#select-queries)
+- [Lambda](#lambda)
 
 ## NamedParameterJDBCTemplate
 
@@ -68,7 +69,9 @@ List<Student> students =
     );
 ```
 
-or if you want to avoid the use to lambda's
+### Lambda
+
+For the select queries we use a lambda to map the row into a object. If you want you can use a method instead if the lambda has too much work or if you just perfer to use methods:
 
 ```java
 public List<Student> getStudents(String firstName)
@@ -95,6 +98,7 @@ public List<Student> getStudents(String firstName)
     
     
 public Student mapStudentRows(ResultSet rs, int rowNum)
+    throws SQLException // it is expected that this can throw a SQLException, so mark the method as such 
 {
     return new Student()
         .setId(rs.getLong("id"))
