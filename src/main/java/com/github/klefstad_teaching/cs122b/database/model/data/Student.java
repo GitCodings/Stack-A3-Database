@@ -2,10 +2,22 @@ package com.github.klefstad_teaching.cs122b.database.model.data;
 
 public class Student
 {
+    private Long    id;
     private String  firstName;
     private String  lastName;
     private Integer year;
     private Double  gpa;
+
+    public Long getId()
+    {
+        return id;
+    }
+
+    public Student setId(Long id)
+    {
+        this.id = id;
+        return this;
+    }
 
     public String getFirstName()
     {
@@ -51,3 +63,4 @@ public class Student
         return this;
     }
 }
+

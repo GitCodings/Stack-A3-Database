@@ -34,7 +34,7 @@ public class JDBCTemplateController
     {
         List<Student> students =
             this.template.query(
-                "SELECT first_name, last_name, year, gpa " +
+                "SELECT id, first_name, last_name, year, gpa " +
                 "FROM activity.student " +
                 "WHERE first_name = :firstName;",
 
@@ -43,6 +43,7 @@ public class JDBCTemplateController
 
                 (rs, rowNum) ->
                     new Student()
+                        .setId(rs.getLong("id"))
                         .setFirstName(rs.getString("first_name"))
                         .setLastName(rs.getString("last_name"))
                         .setYear(rs.getInt("year"))

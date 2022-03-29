@@ -52,6 +52,7 @@ public class SQLConnectionController
                 while (rs.next()) {
                     students.add(
                         new Student()
+                            .setId(rs.getLong("id"))
                             .setFirstName(rs.getString("first_name"))
                             .setLastName(rs.getString("last_name"))
                             .setYear(rs.getInt("year"))
