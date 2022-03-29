@@ -68,7 +68,7 @@ List<Student> students =
     );
 ```
 
-or 
+or if you want to avoid the use to lambda's
 
 ```java
 public List<Student> getStudents(String firstName)
