@@ -45,8 +45,8 @@ To get values from the database (`SELECT`) we use `NamedParameterJDBCTemplate::q
 ```java
 String sql = 
     "SELECT id, first_name, last_name, year, gpa " +
-        "FROM activity.student " +
-        "WHERE first_name = :firstName;"; //notice we mark varaibles with the ':var' format
+    "FROM activity.student " +
+    "WHERE first_name = :firstName;"; //notice we mark varaibles with the ':var' format
     
 MapSqlParameterSource source = 
     new MapSqlParameterSource() //For ever ':var' we list a value and `Type` for value
