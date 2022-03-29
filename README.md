@@ -54,7 +54,9 @@ MapSqlParameterSource source =
         
         
 List<Student> students =
-    this.template.query(sql, source,
+    this.template.query(
+        sql, 
+        source,
         // For every row this lambda will be called to turn it into a Object (in this case `Student`)
         (rs, rowNum) ->          
             new Student()
