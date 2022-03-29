@@ -2,6 +2,7 @@
 
 - [NamedParameterJDBCTemplate](#namedparameterjdbctemplate)
 - [Update Queries](#update-queries)
+- [Select Queries](#select-queries)
 
 ## NamedParameterJDBCTemplate
 
