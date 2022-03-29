@@ -94,7 +94,7 @@ public List<Student> getStudents(String firstName)
 }
     
     
-public Studen mapStudenRows(ResultSet rs, int rowNum)
+public Student mapStudentRows(ResultSet rs, int rowNum)
 {
     return new Student()
         .setId(rs.getLong("id"))
