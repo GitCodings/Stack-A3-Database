@@ -1,9 +1,43 @@
 # CS122B Activity 3 - Database
 
+- [Scehma](#schema)
 - [NamedParameterJDBCTemplate](#namedparameterjdbctemplate)
 - [Update Queries](#update-queries)
 - [Select Queries](#select-queries)
 - [Lambda](#lambda)
+
+## Schema
+
+Here is our schema we will be using for this activity
+
+```sql
+CREATE TABLE activity.student
+(
+    id         INT          NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(256) NOT NULL,
+    last_name  VARCHAR(256) NOT NULL,
+    year       INT          NOT NULL,
+    gpa        DECIMAL      NOT NULL
+);
+
+CREATE TABLE activity.class
+(
+    id    INT          NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name  VARCHAR(256) NOT NULL UNIQUE,
+    units INT          NOT NULL
+);
+
+CREATE TABLE activity.student_class
+(
+    student_id INT NOT NULL,
+    class_id   INT NOT NULL,
+    PRIMARY KEY (student_id, class_id),
+    FOREIGN KEY (student_id) REFERENCES activity.student (id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (class_id) REFERENCES activity.class (id)
+        ON UPDATE CASCADE ON DELETE CASCADE
+);
+```
 
 ## NamedParameterJDBCTemplate
 
