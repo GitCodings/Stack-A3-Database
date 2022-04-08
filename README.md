@@ -142,3 +142,18 @@ public Student mapStudentRows(ResultSet rs, int rowNum)
         .setGpa(rs.getDouble("gpa"));
 }
 ```
+
+You can also have more statements inside of a lambda by using the `{}` braces:
+
+```java
+(rs, rowNum) ->  {
+    Student student = new Student()
+        .setId(rs.getLong("id"))
+        .setFirstName(rs.getString("first_name"))
+        .setLastName(rs.getString("last_name"))
+        .setYear(rs.getInt("year"))
+        .setGpa(rs.getDouble("gpa"));
+    
+    return student;      
+}
+```
