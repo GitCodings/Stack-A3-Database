@@ -29,6 +29,9 @@ public class SQLConnectionController
     @Autowired
     public SQLConnectionController(DataSource dataSource)
     {
+        // We would normally not do this, but we are doing this for the
+        // Activity to learn more about how Java connects to Databases
+        // Please use NamedParameterJdbcTemplate instead
         this.dataSource = dataSource;
     }
 
@@ -38,10 +41,12 @@ public class SQLConnectionController
     {
         List<Student> students = new ArrayList<>();
 
+        // THIS IS HERE FOR EXAMPLE ONLY
+        // PLEASE USE NamedParameterJdbcTemplate INSTEAD
         try (
             Connection connection = dataSource.getConnection();
             PreparedStatement ps = connection.prepareStatement(
-                "SELECT first_name, last_name, year, gpa " +
+                "SELECT id, first_name, last_name, year, gpa " +
                 "FROM activity.student " +
                 "WHERE first_name = ?;"
             )
@@ -61,6 +66,7 @@ public class SQLConnectionController
                 }
             }
         } catch (SQLException e) {
+            e.printStackTrace();
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
@@ -76,6 +82,8 @@ public class SQLConnectionController
     {
         Student student = request.getStudent();
 
+        // THIS IS HERE FOR EXAMPLE ONLY
+        // PLEASE USE NamedParameterJdbcTemplate INSTEAD
         try (
             Connection connection = dataSource.getConnection();
             PreparedStatement ps = connection.prepareStatement(
@@ -97,6 +105,7 @@ public class SQLConnectionController
             }
 
         } catch (SQLException e) {
+            e.printStackTrace();
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
