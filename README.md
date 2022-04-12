@@ -71,7 +71,7 @@ int rowsUpdated = this.template.update(sql, source);
 
 ## Select Queries
 
-To get values from the database (`SELECT`) we use `NamedParameterJDBCTemplate::query()` for a list of values *or* `NamedParameterJDBCTemplate::queryForObject()` if we expect there to be **exactly one value** (throws if not exactly one value) which takes three arguments (the same two as update as well as one additional one for mapping)
+To get values from the database (`SELECT`) we use `NamedParameterJDBCTemplate::query()` for a list of values *or* `NamedParameterJDBCTemplate::queryForObject()` if we expect there to be **exactly one value** (throws an error, which you must catch, if not exactly one value) which takes three arguments (the same two as update as well as one additional one for mapping)
 
  - `String` - The Sql string to execute
  - `MapSqlParameterSource` - a 'map' of values to replace in the sql string (we **never** place values directly in the sql string as this leaves us open for sql injection, therefore we use this to keep a record of all the values to replace)
