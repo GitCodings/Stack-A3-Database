@@ -1,6 +1,6 @@
-package com.github.klefstad_teaching.cs122b.database.model.response;
+package com.gitcodings.stack.database.model.response;
 
-import com.github.klefstad_teaching.cs122b.database.model.data.Student;
+import com.gitcodings.stack.database.model.data.Student;
 
 import java.util.List;
 

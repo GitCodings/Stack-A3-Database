@@ -1,4 +1,4 @@
-# CS122B Activity 3 - Database
+# Stack Activity 3 - Database
 
 - [Scehma](#schema)
 - [NamedParameterJDBCTemplate](#namedparameterjdbctemplate)

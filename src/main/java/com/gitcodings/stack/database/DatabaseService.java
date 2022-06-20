@@ -1,4 +1,4 @@
-package com.github.klefstad_teaching.cs122b.database;
+package com.gitcodings.stack.database;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
